@@ -1,18 +1,3 @@
-// Mode sombre activé par défaut
-document.addEventListener("DOMContentLoaded", () => {
-    const body = document.body;
-    const themeToggle = document.getElementById('theme-toggle');
-
-    // Activer directement le mode sombre au chargement
-    body.classList.add('dark-mode');
-
-    // Supprime la gestion du texte "Mode Clair" / "Mode Sombre"
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        body.classList.toggle('dark-mode');
-    });
-});
-
 // Gestion des onglets
 const tabs = document.querySelectorAll('.tab-link');
 const contents = document.querySelectorAll('.tab-content');
