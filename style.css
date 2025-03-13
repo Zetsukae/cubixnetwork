@@ -12,6 +12,10 @@
 
 /* Mode sombre activé par défaut */
 body {
+    background-image: url('https://i.imgur.com/07NdzMM.png'); /* Chemin de l'image */
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* L'image ne bouge pas au scroll */
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
