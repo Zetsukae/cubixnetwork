@@ -38,6 +38,7 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    list-style: none;
 }
 
 nav ul li a {
@@ -59,14 +60,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: 80vh;
+    padding-top: 20px;
 }
 
 /* Section invisible par défaut */
 .tab-content {
     display: none;
-    width: 100%;
+    width: 90%;
     max-width: 800px;
     margin-top: 20px;
     opacity: 0;
@@ -79,11 +80,12 @@ main {
     opacity: 1;
 }
 
-/* Style pour les boîtes (squircles) */
+/* Style pour les squircles */
 .squircle {
     width: 80%;
-    max-width: 400px;
-    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     display: flex;
