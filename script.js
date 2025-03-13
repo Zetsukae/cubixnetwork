@@ -1,29 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const themeToggle = document.getElementById("theme-toggle");
-    const currentTheme = localStorage.getItem("theme") || "light";
-    
-    document.body.classList.add(currentTheme + "-mode");
-    themeToggle.textContent = currentTheme === "dark" ? "☀️ Mode clair" : "🌙 Mode sombre";
+// Mode sombre / clair
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-    themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        document.body.classList.toggle("light-mode");
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
 
-        const newTheme = document.body.classList.contains("dark-mode") ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        themeToggle.textContent = newTheme === "dark" ? "☀️ Mode clair" : "🌙 Mode sombre";
+    if (body.classList.contains('dark-mode')) {
+        themeToggle.textContent = "Mode Clair";
+    } else {
+        themeToggle.textContent = "Mode Sombre";
+    }
+});
+
+// Gestion des onglets
+const tabs = document.querySelectorAll('.tab-link');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
     });
-function showTab(tabId) {
-    // Cacher toutes les sections
-    document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.style.display = "none";
-    });
-
-    // Afficher seulement l'onglet sélectionné
-    document.getElementById(tabId).style.display = "block";
-}
-
-// Afficher l'accueil par défaut
-document.addEventListener("DOMContentLoaded", () => {
-    showTab('home');
 });
