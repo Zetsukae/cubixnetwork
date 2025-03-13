@@ -13,4 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("theme", newTheme);
         themeToggle.textContent = newTheme === "dark" ? "☀️ Mode clair" : "🌙 Mode sombre";
     });
+function showTab(tabId) {
+    // Cacher toutes les sections
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.style.display = "none";
+    });
+
+    // Afficher seulement l'onglet sélectionné
+    document.getElementById(tabId).style.display = "block";
+}
+
+// Afficher l'accueil par défaut
+document.addEventListener("DOMContentLoaded", () => {
+    showTab('home');
 });
