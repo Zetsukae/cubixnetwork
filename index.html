@@ -1,59 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/FsNvMv8.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CN Server</title>
+    <title>CubixNetwork</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
-    <nav>
-        <div class="logo">
-            <img src="https://i.imgur.com/r1HT2CZ.png" alt="CN logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="tab-link active" data-tab="home">Accueil</a></li>
-            <li><a href="#" class="tab-link" data-tab="patch-notes">Patch Notes</a></li>
-            <li><a href="#" class="tab-link" data-tab="players">Joueurs Connectés</a></li>
-            <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
-        </ul>
-    </nav>
+<body>
+    <header>
+        <h1 class="logo">CUBIX<span>NETWORK</span></h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="tab-link active" data-tab="home">Accueil</a></li>
+                <li><a href="#" class="tab-link" data-tab="patch-notes">Patch Notes</a></li>
+                <li><a href="#" class="tab-link" data-tab="players">Joueurs Connectés</a></li>
+                <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section id="home" class="tab-content active">
-            <h1>Bienvenue sur le serveur CubixNetwork</h1>
-            <p>Rejoignez-nous dès maintenant et profitez d'une aventure unique !</p>
+            <h2>Rejoignez-nous dès maintenant et profitez d'une aventure unique !</h2>
             <div class="squircle">
-                <div class="squircle-text">
-                    IP : 178.194.224.249<br>
-                    Port : 19132
-                </div>
+                <p>IP: 178.194.224.249 <br> Port : 19132</p>
             </div>
         </section>
 
         <section id="patch-notes" class="tab-content">
-            <h1>Patch Notes</h1>
-            <p>Ici, vous trouverez toutes les mises à jour et améliorations du serveur.</p>
-            <div class="squircle">
-                <div class="squircle-text">Aucune mise à jour pour l'instant.</div>
-            </div>
+            <h2>Patch Notes</h2>
+            <p>Ici seront affichées les dernières mises à jour du serveur.</p>
         </section>
 
         <section id="players" class="tab-content">
-            <h1>Joueurs Connectés</h1>
-            <p>Liste des joueurs en ligne :</p>
-            <div class="squircle">
-                <div class="squircle-text" id="player-list">Chargement...</div>
-            </div>
+            <h2>Joueurs Connectés</h2>
+            <div id="player-list">Chargement...</div>
         </section>
 
         <section id="contact" class="tab-content">
-            <h1>Contact</h1>
-            <p>Besoin d'aide ? Contactez le support ici.</p>
-            <div class="squircle">
-                <div class="squircle-text">Notre Discord : <a href="#">Lien à venir</a></div>
-            </div>
+            <h2>Contact</h2>
+            <p>Contactez-nous pour toute question !</p>
         </section>
     </main>
 
