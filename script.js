@@ -1,3 +1,4 @@
+document.body.classList.add('dark-mode');
 // Gestion des onglets
 const tabs = document.querySelectorAll('.tab-link');
 const contents = document.querySelectorAll('.tab-content');
