@@ -8,26 +8,21 @@
     --text-dark: #fff;
     --nav-bg-light: rgba(255, 255, 255, 0.8);
     --nav-bg-dark: rgba(34, 34, 34, 0.8);
-    body.light-mode {
-    background: var(--background-light);
-    color: black; /* Texte noir en mode clair */
 }
 
+/* Mode sombre activé par défaut */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    background: var(--background-dark);
+    color: var(--text-dark);
     transition: background 0.3s, color 0.3s;
 }
 
 body.light-mode {
     background: var(--background-light);
-    color: var(--text-light);
-}
-
-body.dark-mode {
-    background: var(--background-dark);
-    color: var(--text-dark);
+    color: black;
 }
 
 /* Barre de navigation */
@@ -35,34 +30,38 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--nav-bg-light);
+    background: var(--nav-bg-dark);
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centre les liens */
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
-    min-height: 60px; /* Assure une bonne taille */
+    min-height: 60px;
 }
 
-body.dark-mode nav {
-    background: var(--nav-bg-dark);
+body.light-mode nav {
+    background: var(--nav-bg-light);
 }
 
 .logo img {
     height: 50px;
 }
 
+/* Onglets centrés */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* Évite que les onglets se coupent */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
     display: inline;
-    white-space: nowrap; /* Empêche la coupure des mots */
+    white-space: nowrap;
 }
 
 .nav-links a {
@@ -74,35 +73,24 @@ body.dark-mode nav {
     font-size: 16px;
 }
 
-.nav-links a:hover, .nav-links a.active {
+body.light-mode .nav-links a {
+    color: black;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
 
-/* Bouton mode sombre */
-#theme-toggle {
-    background: var(--main-color);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-#theme-toggle:hover {
-    background: #e08e00;
-}
-
 /* Contenu */
 main {
-    margin-top: 100px; /* Ajuste pour ne pas être caché sous la navbar */
+    margin-top: 100px; /* Ajuste l’espace sous la barre de navigation */
     text-align: center;
     padding: 20px;
 }
 
-/* Onglets */
+/* Styles des sections */
 .tab-content {
     display: none;
 }
@@ -111,58 +99,32 @@ main {
     display: block;
 }
 
+/* Correction des couleurs de texte */
+h1, h2, h3, p, a {
+    color: var(--text-dark);
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode a {
+    color: black;
+}
+
+/* Bouton (caché car mode sombre par défaut) */
+#theme-toggle {
+    display: none;
+}
+
 /* Responsive pour petit écran */
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column;
         gap: 10px;
     }
-
+    
     .nav-links li {
         text-align: center;
     }
-}
-/* Définition des couleurs de texte */
-body.light-mode {
-    background: var(--background-light);
-    color: black; /* Texte noir en mode clair */
-}
-
-body.dark-mode {
-    background: var(--background-dark);
-    color: var(--text-dark);
-}
-
-/* Correction : tous les titres et paragraphes prennent la couleur du mode */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode p,
-body.dark-mode a {
-    color: var(--text-dark);
-}
-
-/* Même chose pour les liens dans la navbar */
-.nav-links a {
-    color: black; /* Par défaut, noir */
-}
-
-body.dark-mode .nav-links a {
-    color: white; /* Blanc en mode sombre */
-}
-
-/* Correction pour le bouton de changement de thème */
-#theme-toggle {
-    background: var(--main-color);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-#theme-toggle:hover {
-    background: #e08e00;
 }
