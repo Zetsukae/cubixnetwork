@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll('.tab-link');
     const sections = document.querySelectorAll('.tab-content');
 
-    // Fonction pour afficher une section
+    // Fonction pour afficher un onglet et cacher les autres
     function showTab(tabName) {
         sections.forEach(section => {
             if (section.id === tabName) {
@@ -15,12 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 section.style.opacity = "0";
                 setTimeout(() => section.style.display = "none", 300);
             }
-        }
+        });
+    }
 
-    // Définir le premier onglet affiché au chargement
-    showTab('home');
-
-    // Gestion des clics sur les onglets
+    // Événements sur les liens de navigation
+    const tabs = document.querySelectorAll('.tab-link');
     tabs.forEach(tab => {
         tab.addEventListener("click", (e) => {
             e.preventDefault();
@@ -30,19 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Mise à jour des joueurs connectés
-    async function fetchPlayers() {
-        const serverIP = "178.194.224.249"; // IP du serveur
-        const apiURL = https://api.mcsrvstat.us/2/${serverIP};
-
-        try {
-            const response = await fetch(apiURL);
-            const data = await response.json();
-            const playerListDiv = document.getElementById("player-list");
-
-            if (!data.online) {
-                playerListDiv.innerHTML = "Le serveur est hors ligne.";
-                return;
-            }
-
-            if (data.players.online ===
+    // Affichage de l'onglet actif au chargement
+    showTab("home");
+});
