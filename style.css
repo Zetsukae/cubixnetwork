@@ -27,6 +27,7 @@ body.dark-mode {
     color: var(--text-dark);
 }
 
+/* Barre de navigation */
 nav {
     position: fixed;
     top: 0;
@@ -38,6 +39,7 @@ nav {
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
+    min-height: 60px; /* Assure une bonne taille */
 }
 
 body.dark-mode nav {
@@ -48,6 +50,33 @@ body.dark-mode nav {
     height: 50px;
 }
 
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Évite que les onglets se coupent */
+}
+
+.nav-links li {
+    display: inline;
+    white-space: nowrap; /* Empêche la coupure des mots */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Bouton mode sombre */
 #theme-toggle {
     background: var(--main-color);
     border: none;
@@ -63,69 +92,30 @@ body.dark-mode nav {
     background: #e08e00;
 }
 
+/* Contenu */
 main {
-    margin-top: 80px;
+    margin-top: 100px; /* Ajuste pour ne pas être caché sous la navbar */
     text-align: center;
     padding: 20px;
 }
 
-.server-card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-body.dark-mode .server-card {
-    background: rgba(34, 34, 34, 0.9);
-}
-
-.server-card:hover {
-    transform: scale(1.05);
-}
-
-.server-ip {
-    font-weight: bold;
-    color: var(--main-color);
-}
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px 20px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-
+/* Onglets */
 .tab-content {
     display: none;
 }
 
 .tab-content.active {
     display: block;
+}
+
+/* Responsive pour petit écran */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
 }
