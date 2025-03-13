@@ -1,0 +1,22 @@
+body {
+    font-family: 'Minecraft', sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+body.light-mode {
+    background: #ffffff;
+    color: #333;
+}
+body.dark-mode {
+    background: #222;
+    color: #fff;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+button {
+    padding: 10px;
+    cursor: pointer;
+}
