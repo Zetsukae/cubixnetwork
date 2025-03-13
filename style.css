@@ -11,15 +11,11 @@
 }
 
 body {
-    background-image: url('https://i.imgur.com/07NdzMM.png'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: var(--background-dark);
+    color: var(--text-dark);
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background: var(--background-dark);
-    color: var(--text-dark);
     transition: background 0.3s, color 0.3s;
 }
 
@@ -37,17 +33,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
     min-height: 60px;
 }
 
 body.light-mode nav {
     background: var(--nav-bg-light);
-}
-
-.logo img {
-    height: 50px;
 }
 
 .nav-links {
@@ -66,7 +57,6 @@ body.light-mode nav {
     font-weight: bold;
     padding: 10px 15px;
     transition: 0.3s;
-    font-size: 16px;
 }
 
 body.light-mode .nav-links a {
@@ -96,7 +86,7 @@ main {
 .squircle {
     width: 300px;
     height: 150px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -109,8 +99,7 @@ main {
 }
 
 body.dark-mode .squircle {
-    background: rgba(34, 34, 34, 0.9);
-    color: white;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
