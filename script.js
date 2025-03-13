@@ -1,4 +1,5 @@
 document.body.classList.add('dark-mode');
+
 // Gestion des onglets
 const tabs = document.querySelectorAll('.tab-link');
 const contents = document.querySelectorAll('.tab-content');
@@ -14,3 +15,43 @@ tabs.forEach(tab => {
         document.getElementById(tab.dataset.tab).classList.add('active');
     });
 });
+
+// Récupération des joueurs connectés
+async function fetchPlayers() {
+    const serverIP = "178.194.224.249"; // Ton IP Minecraft
+
+    try {
+        const response = await fetch(https://api.mcsrvstat.us/2/${serverIP});
+        const data = await response.json();
+        const playerListDiv = document.getElementById("player-list");
+
+        if (!data.online) {
+            playerListDiv.innerHTML = "Le serveur est hors ligne.";
+            return;
+        }
+
+        if (data.players.online === 0) {
+            playerListDiv.innerHTML = "Aucun joueur connecté.";
+        } else {
+            playerListDiv.innerHTML = <strong>${data.players.online}</strong> joueurs en ligne :<br>;
+            const ul = document.createElement("ul");
+
+            data.players.list.forEach(player => {
+                const li = document.createElement("li");
+                li.textContent = player;
+                ul.appendChild(li);
+            });
+
+            playerListDiv.appendChild(ul);
+        }
+    } catch (error) {
+        document.getElementById("player-list").innerHTML = "Erreur de récupération des joueurs.";
+        console.error("Erreur lors de la récupération des joueurs :", error);
+    }
+}
+
+// Met à jour la liste toutes les 30 secondes
+setInterval(fetchPlayers, 30000);
+
+// Charger la liste au démarrage
+fetchPlayers();
