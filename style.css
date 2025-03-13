@@ -1,110 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-:root {
-    --main-color: #f2a900;
-    --background-light: #f4f4f4;
-    --background-dark: #222;
-    --text-light: #333;
-    --text-dark: #fff;
-    --nav-bg-light: rgba(255, 255, 255, 0.8);
-    --nav-bg-dark: rgba(34, 34, 34, 0.8);
-}
-
+/* Styles généraux */
 body {
-    background: var(--background-dark);
-    color: var(--text-dark);
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, sans-serif;
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
     margin: 0;
     padding: 0;
-    transition: background 0.3s, color 0.3s;
 }
 
-body.light-mode {
-    background: var(--background-light);
-    color: black;
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--nav-bg-dark);
-    padding: 15px 20px;
+/* En-tête */
+header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    transition: background 0.3s;
-    min-height: 60px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
 }
 
-body.light-mode nav {
-    background: var(--nav-bg-light);
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #50e3c2;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
-.nav-links {
+.logo span {
+    color: #1e90ff;
+}
+
+/* Navigation */
+nav ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
-.nav-links a {
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-size: 18px;
     padding: 10px 15px;
-    transition: 0.3s;
+    border-radius: 20px;
+    transition: background 0.3s;
 }
 
-body.light-mode .nav-links a {
-    color: black;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
+nav ul li a.active, 
+nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
 }
 
+/* Contenu des onglets */
 main {
-    margin-top: 100px;
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
 }
 
+/* Section invisible par défaut */
 .tab-content {
     display: none;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
+/* Affichage actif */
 .tab-content.active {
     display: block;
+    opacity: 1;
 }
 
+/* Style pour les boîtes (squircles) */
 .squircle {
-    width: 300px;
-    height: 150px;
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    padding: 10px;
     text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-body.dark-mode .squircle {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
 }
