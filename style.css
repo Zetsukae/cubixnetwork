@@ -1,22 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --main-color: #f2a900;
+    --background-light: #f4f4f4;
+    --background-dark: #222;
+    --text-light: #333;
+    --text-dark: #fff;
+    --nav-bg-light: rgba(255, 255, 255, 0.8);
+    --nav-bg-dark: rgba(34, 34, 34, 0.8);
+}
+
 body {
-    font-family: 'Minecraft', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
     transition: background 0.3s, color 0.3s;
 }
+
 body.light-mode {
-    background: #ffffff;
-    color: #333;
+    background: var(--background-light);
+    color: var(--text-light);
 }
+
 body.dark-mode {
-    background: #222;
-    color: #fff;
+    background: var(--background-dark);
+    color: var(--text-dark);
 }
-header {
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav-bg-light);
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+body.dark-mode nav {
+    background: var(--nav-bg-dark);
+}
+
+.logo img {
+    height: 50px;
+}
+
+#theme-toggle {
+    background: var(--main-color);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #e08e00;
+}
+
+main {
+    margin-top: 80px;
+    text-align: center;
     padding: 20px;
 }
-button {
-    padding: 10px;
-    cursor: pointer;
+
+.server-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+body.dark-mode .server-card {
+    background: rgba(34, 34, 34, 0.9);
+}
+
+.server-card:hover {
+    transform: scale(1.05);
+}
+
+.server-ip {
+    font-weight: bold;
+    color: var(--main-color);
 }
