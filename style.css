@@ -12,10 +12,10 @@
 
 /* Mode sombre activé par défaut */
 body {
-    background-image: url('https://i.imgur.com/07NdzMM.png'); /* Chemin de l'image */
-    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
-    background-position: center; /* Centre l'image */
-    background-attachment: fixed; /* L'image ne bouge pas au scroll */
+    background-image: url('https://i.imgur.com/07NdzMM.png'); /* Image de fond */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
@@ -37,7 +37,7 @@ nav {
     background: var(--nav-bg-dark);
     padding: 15px 20px;
     display: flex;
-    justify-content: center; /* Centre les liens */
+    justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
@@ -57,7 +57,7 @@ body.light-mode nav {
     list-style: none;
     display: flex;
     gap: 20px;
-    justify-content: center; /* Centre horizontalement */
+    justify-content: center;
     align-items: center;
     padding: 0;
     margin: 0;
@@ -116,12 +116,44 @@ body.light-mode a {
     color: black;
 }
 
+/* Styles des Squircles */
+.squircle {
+    width: 300px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body.dark-mode .squircle {
+    background: rgba(34, 34, 34, 0.9);
+    color: white;
+}
+
+.squircle a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.squircle a:hover {
+    text-decoration: underline;
+}
+
 /* Bouton (caché car mode sombre par défaut) */
 #theme-toggle {
     display: none;
 }
 
-/* Responsive pour petit écran */
+/* Responsive */
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column;
@@ -131,36 +163,4 @@ body.light-mode a {
     .nav-links li {
         text-align: center;
     }
-}
-.squircle {
-    width: 300px; /* Taille du squircle */
-    height: 150px;
-    background: rgba(255, 255, 255, 0.9); /* Fond blanc avec opacité */
-    border-radius: 30px; /* Arrondi pour donner un effet "squircle" */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Centré et avec un espace */
-    padding: 10px;
-}
-
-body.dark-mode .squircle {
-    background: rgba(34, 34, 34, 0.9); /* Changement de couleur en mode sombre */
-}
-
-.squircle textarea {
-    width: 90%;
-    height: 80%;
-    border: none;
-    background: transparent;
-    font-size: 16px;
-    color: black;
-    resize: none;
-    outline: none;
-    text-align: center;
-}
-
-body.dark-mode .squircle textarea {
-    color: white; /* Texte blanc en mode sombre */
 }
