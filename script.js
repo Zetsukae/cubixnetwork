@@ -1,26 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Gestion des onglets
+    // Sélection des éléments
     const tabs = document.querySelectorAll('.tab-link');
-    const contents = document.querySelectorAll('.tab-content');
+    const sections = document.querySelectorAll('.tab-content');
 
+    // Fonction pour afficher une section
+    function showTab(tabName) {
+        sections.forEach(section => {
+            if (section.id === tabName) {
+                section.classList.add('active');
+                section.style.display = "block";
+                setTimeout(() => section.style.opacity = "1", 10);
+            } else {
+                section.classList.remove('active');
+                section.style.opacity = "0";
+                setTimeout(() => section.style.display = "none", 300);
+            }
+        }
+
+    // Définir le premier onglet affiché au chargement
+    showTab('home');
+
+    // Gestion des clics sur les onglets
     tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
+        tab.addEventListener("click", (e) => {
             e.preventDefault();
-
             tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-
             tab.classList.add('active');
-            document.getElementById(tab.dataset.tab).classList.add('active');
+            showTab(tab.dataset.tab);
         });
     });
 
-    // Récupération des joueurs connectés
+    // Mise à jour des joueurs connectés
     async function fetchPlayers() {
-        const serverIP = "178.194.224.249";
+        const serverIP = "178.194.224.249"; // IP du serveur
+        const apiURL = https://api.mcsrvstat.us/2/${serverIP};
 
         try {
-            const response = await fetch(https://api.mcsrvstat.us/2/${serverIP});
+            const response = await fetch(apiURL);
             const data = await response.json();
             const playerListDiv = document.getElementById("player-list");
 
@@ -29,26 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            if (data.players.online === 0) {
-                playerListDiv.innerHTML = "Aucun joueur connecté.";
-            } else {
-                playerListDiv.innerHTML = <strong>${data.players.online}</strong> joueurs en ligne :<br>;
-                const ul = document.createElement("ul");
-
-                data.players.list.forEach(player => {
-                    const li = document.createElement("li");
-                    li.textContent = player;
-                    ul.appendChild(li);
-                });
-
-                playerListDiv.appendChild(ul);
-            }
-        } catch (error) {
-            document.getElementById("player-list").innerHTML = "Erreur de récupération des joueurs.";
-            console.error("Erreur lors de la récupération des joueurs :", error);
-        }
-    }
-
-    setInterval(fetchPlayers, 30000);
-    fetchPlayers();
-});
+            if (data.players.online ===
