@@ -18,7 +18,7 @@ tabs.forEach(tab => {
 
 // Récupération des joueurs connectés
 async function fetchPlayers() {
-    const serverIP = "178.194.224.249"; // Ton IP Minecraft
+    const serverIP = "178.194.224.249";
 
     try {
         const response = await fetch(https://api.mcsrvstat.us/2/${serverIP});
@@ -50,8 +50,5 @@ async function fetchPlayers() {
     }
 }
 
-// Met à jour la liste toutes les 30 secondes
 setInterval(fetchPlayers, 30000);
-
-// Charger la liste au démarrage
 fetchPlayers();
