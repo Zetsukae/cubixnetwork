@@ -1,16 +1,16 @@
-// Mode sombre / clair
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+// Mode sombre activé par défaut
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
 
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
+    // Activer directement le mode sombre au chargement
+    body.classList.add('dark-mode');
 
-    if (body.classList.contains('dark-mode')) {
-        themeToggle.textContent = "Mode Clair";
-    } else {
-        themeToggle.textContent = "Mode Sombre";
-    }
+    // Supprime la gestion du texte "Mode Clair" / "Mode Sombre"
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
+    });
 });
 
 // Gestion des onglets
