@@ -1,5 +1,5 @@
 function copyIP() {
-    const ip = "178.194.224.249"; // Remplace par ton IP
+    const ip = "178.194.224.249"; // IP
     navigator.clipboard.writeText(ip).then(() => {
         document.getElementById("copied").classList.remove("hidden");
         setTimeout(() => {
