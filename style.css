@@ -90,3 +90,10 @@ footer {
     font-size: 14px;
     opacity: 0.7;
 }
+
+.logo {
+    width: 200px; /* Modifie selon la taille que tu veux */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
