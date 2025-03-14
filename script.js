@@ -1,6 +1,6 @@
 // Fonction pour copier l'IP du serveur
 function copyIP() {
-    const ip = "play.cn-minecraft.com"; // Remplace par l'IP de ton serveur
+    const ip = "play.cn-minecraft.com"; // Remplace par ton IP
     navigator.clipboard.writeText(ip).then(() => {
         document.getElementById("copied").classList.remove("hidden");
         setTimeout(() => {
@@ -9,8 +9,8 @@ function copyIP() {
     });
 }
 
-// Simule un nombre de joueurs en ligne (Tu peux utiliser une API pour des stats réelles)
+// Simule un nombre de joueurs en ligne
 document.addEventListener("DOMContentLoaded", () => {
-    let randomPlayers = Math.floor(Math.random() * 100);
+    let randomPlayers = Math.floor(Math.random() * 200);
     document.getElementById("player-count").textContent = randomPlayers;
 });
