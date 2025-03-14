@@ -1,95 +1,61 @@
-/* Styles généraux */
-body {
-    font-family: Arial, sans-serif;
-    background: #1c1c1c;
-    color: white;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
 }
 
-/* En-tête */
+body {
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    background: #444;
 }
 
 .logo {
-    font-size: 40px;
-    font-weight: bold;
-    color: #50e3c2;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
 }
 
-.logo span {
-    color: #1e90ff;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-    list-style: none;
-}
-
-nav ul li a {
+nav a {
+    color: #fff;
     text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 20px;
-    transition: background 0.3s;
+    margin: 0 15px;
 }
 
-nav ul li a.active, 
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+.hero {
+    margin: 50px 0;
 }
 
-/* Contenu des onglets */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 80vh;
-    padding-top: 20px;
+.hero button {
+    background: #55ff55;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
-/* Section invisible par défaut */
-.tab-content {
+.hero button:hover {
+    background: #44cc44;
+}
+
+.hidden {
     display: none;
-    width: 90%;
-    max-width: 800px;
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
 }
 
-/* Affichage actif */
-.tab-content.active {
-    display: block;
-    opacity: 1;
+.stats {
+    margin-top: 50px;
 }
 
-/* Style pour les squircles */
-.squircle {
-    width: 80%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #333;
 }
