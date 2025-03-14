@@ -18,13 +18,47 @@ header {
     font-size: 24px;
 }
 
-/* CONTENU */
-main {
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #00aaff;
+}
+
+/* SECTIONS */
+.tab {
+    display: block;
     margin-top: 50px;
 }
 
-h2 {
-    margin-bottom: 10px;
+.hidden {
+    display: none;
+}
+
+/* FORMULAIRE CONTACT */
+form {
+    margin-top: 15px;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #00aaff;
+    border-radius: 5px;
+    background: #1a1a1a;
+    color: white;
+    resize: none;
 }
 
 button {
@@ -41,10 +75,13 @@ button:hover {
     background: #0088cc;
 }
 
-.hidden {
-    display: none;
-    color: #00ff00;
-    margin-top: 10px;
+/* BOUTON DISCORD */
+.discord-btn {
+    background: #5865F2;
+}
+
+.discord-btn:hover {
+    background: #4752C4;
 }
 
 /* FOOTER */
