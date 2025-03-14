@@ -3,22 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CubixNetwork - Minecraft server.</title>
+    <title>CN - Serveur Minecraft</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
 
     <header>
-        <h1>CubixNetwork</h1>
+        <h1>CN Minecraft</h1>
+        <nav>
+            <a href="#" onclick="showTab('home')">Accueil</a>
+            <a href="#" onclick="showTab('updates')">Patch Notes & Update</a>
+            <a href="#" onclick="showTab('contact')">Contact</a>
+        </nav>
     </header>
 
     <main>
-        <h2>Serveur Minecraft Unique</h2>
-        <p>Rejoignez une aventure inédite avec un gameplay innovant et une communauté active.</p>
-        
-        <button onclick="copyIP()">Copier l'IP</button>
-        <p id="copied" class="hidden">IP copiée !</p>
+        <!-- Accueil -->
+        <section id="home" class="tab">
+            <h2>Serveur Minecraft Unique</h2>
+            <p>Rejoignez une aventure inédite avec un gameplay innovant et une communauté active.</p>
+            <button onclick="copyIP()">Copier l'IP</button>
+            <p id="copied" class="hidden">IP copiée !</p>
+        </section>
+
+        <!-- Patch Notes & Update -->
+        <section id="updates" class="tab hidden">
+            <h2>Patch Notes & Updates</h2>
+            <p>⚡ Nouveautés, corrections et ajouts sur le serveur.</p>
+            <ul>
+                <li>✔ Nouvelle économie rééquilibrée</li>
+                <li>✔ Ajout d'un nouveau donjon</li>
+                <li>✔ Corrections de bugs sur les quêtes</li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="tab hidden">
+            <h2>Contactez-nous</h2>
+            <p>Envoyez-nous un message pour toute question ou suggestion.</p>
+            <form action="mailto:contact.forza.games@gmail.com" method="post" enctype="text/plain">
+                <textarea name="message" placeholder="Votre message..." required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+            <a href="https://discord.com" target="_blank">
+                <button class="discord-btn">Rejoindre notre Discord</button>
+            </a>
+        </section>
     </main>
 
     <footer>
