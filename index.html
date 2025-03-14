@@ -1,64 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/FsNvMv8.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CN Server</title>
+    <title>CN - Serveur Minecraft</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
-<body class="dark-mode">
-    <nav>
-        <div class="logo">
-            <img src="https://i.imgur.com/r1HT2CZ.png" alt="CN logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="tab-link active" data-tab="home">Accueil</a></li>
-            <li><a href="#" class="tab-link" data-tab="patch-notes">Patch Notes</a></li>
-            <li><a href="#" class="tab-link" data-tab="players">Joueurs Connectés</a></li>
-            <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
-        </ul>
-    </nav>
+<body>
+    <header>
+        <div class="logo">CN</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+            <a href="#">Statistiques</a>
+            <a href="#">Discord</a>
+        </nav>
+    </header>
 
-    <main>
-        <section id="home" class="tab-content active">
-            <h1>Bienvenue sur le serveur CubixNetwork</h1>
-            <p>Rejoignez-nous dès maintenant et profitez d'une aventure unique !</p>
-            <div class="squircle">
-        <div class="squircle-text">l'IP : 178.194.224.249
-                                   le Port : 19132</div>
-    </div>
+    <section class="hero">
+        <h1>Bienvenue sur CN Minecraft</h1>
+        <p>Un serveur unique avec une communauté incroyable !</p>
+        <button onclick="copyIP()">Rejoindre le serveur</button>
+        <p id="copied" class="hidden">Adresse IP copiée !</p>
+    </section>
 
-        </section>
+    <section class="about">
+        <h2>À propos du serveur</h2>
+        <p>CN est un serveur Minecraft unique, avec des modes de jeu innovants et une communauté active.</p>
+    </section>
 
-        <section id="patch-notes" class="tab-content">
-            <h1>Patch Notes</h1>
-            <p>Ici, vous trouverez toutes les mises à jour et améliorations du serveur.</p>
-            <div class="squircle">
-        <div class="squircle-text">Aucune màj pour l'instant.</div>
-    </div>
+    <section class="stats">
+        <h2>Statistiques</h2>
+        <p>Joueurs en ligne : <span id="player-count">Chargement...</span></p>
+    </section>
 
-        </section>
-
-        <section id="players" class="tab-content">
-            <h1>Joueurs Connectés</h1>
-            <p>Liste des joueurs en ligne...</p>
-            <div class="squircle">
-        <div class="squircle-text">Arrive prochainement.</div>
-    </div>
-
-        </section>
-
-        <section id="contact" class="tab-content">
-            <h1>Contact</h1>
-            <p>Besoin d'aide ? Contactez le support ici.</p>
-            <div class="squircle">
-        <div class="squircle-text">Notre discord : </div>
-    </div>
-
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+    <footer>
+        <p>© 2025 CN Minecraft. Tous droits réservés.</p>
+        <p><a href="#">Mentions légales</a> | <a href="#">Discord</a></p>
+    </footer>
 </body>
 </html>
